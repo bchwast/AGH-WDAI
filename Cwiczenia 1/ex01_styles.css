@@ -1,0 +1,151 @@
+p#p1 {
+    background-color: aqua;
+    font-family: Century;
+    color: darkviolet;
+    font-size: 20pt;
+    border: dotted red;
+    padding: 12px 25px 9px 10px;
+    margin: 9px;
+}
+
+p#p2 {
+    background-color: coral;
+    font-family: Arial;
+    color: magenta;
+    font-size: larger;
+    height: 200px;
+    width: 50px;
+    overflow: auto;
+}
+
+p#p3 {
+    background-color: lavender;
+    font-family: "Comic Sans MS";
+    color: yellow;
+    font-size: smaller;
+    height: 35px;
+    width: 600px;
+}
+
+p#p4 {
+    background-color: darkviolet;
+    font-family: "Times New Roman";
+    color: snow;
+    font-size: xx-large;
+}
+
+table#tab1 {
+    border-collapse: collapse;
+    width: 900px;
+}
+
+tr.row1 {
+    height: 60px;
+}
+
+tr.row1:nth-child(even) {
+    background-color: lightsteelblue;
+}
+
+tr.row1:nth-child(odd) {
+    background-color: lightblue;
+}
+
+th.header1 {
+    background-color: cornflowerblue;
+    border-collapse: collapse;
+    border: 2px solid white;
+}
+
+td.cell1 {
+    border-collapse: collapse;
+    border: 2px solid white;
+}
+
+table#tab2 {
+    border-collapse: collapse;
+    width: 850px;
+    margin-top: 20px;
+}
+
+tr.row2 {
+    background-color: darkgray;
+    height: 60px
+}
+
+th.header2 {
+    border-collapse: collapse;
+    border: 3px solid black;
+    background-color: dimgray;
+}
+
+td.cell2 {
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+img#img1 {
+    float: left;
+    margin-right: 30px;
+    margin-bottom:  7px;
+}
+
+img#img2 {
+    float: right;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+table#tab3 {
+    background-color: black;
+    color: yellow;
+    width: 25%;
+    border: none;
+    border-collapse: collapse;
+}
+
+td#form_header {
+    background-color: darkorange;
+    padding: 10px;
+    border: none;
+}
+
+td.lside {
+    text-align: right;
+    padding: 15px;
+}
+
+input.input1 {
+    alignment: center;
+    margin: auto;
+}
+
+td#formfooter {
+    background-color: darkorange;
+}
+
+td#termsagree {
+    padding: 10px 0;
+}
+
+button#submit {
+    background-color: limegreen;
+    color: white;
+    float: right;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    border: none;
+}
+
+button#cancel {
+    background-color: indianred;
+    color: white;
+    float: right;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+}
+

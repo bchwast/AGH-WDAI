@@ -1,0 +1,64 @@
+div#page {
+    width: 900px;
+    background-color: lightgoldenrodyellow;
+}
+
+h1#title {
+    background-color: darkslategrey;
+    color: white;
+    font-size: 40px;
+    border: solid yellow;
+    border-width: 2px 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+h2.header {
+    font-size: 30px;
+    text-decoration: darkslategrey;
+    border-bottom: solid darkslategrey;
+    margin: 0 37% 0 20px;
+}
+
+h2#last_h {
+    margin: 0 0 0 20px;
+}
+
+p.text {
+    font-size: 20px;
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+}
+
+div#window {
+    background: yellow;
+    border: solid darkorange;
+    border-width: 8px 2px 2px 2px;
+    float: right;
+    width: 34%;
+    font-size: 22px;
+    margin: 10px;
+}
+
+h3#w_title {
+    font-size: 25px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+ul#list {
+    margin: 10px;
+    line-height: 25px;
+}
+
+ul#list > li::marker {
+    font-size: 1.2em;
+}
+
+p#empty {
+    height: 120px;
+    border-top: 1px solid grey;
+    margin-left: 20px;
+}

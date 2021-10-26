@@ -1,0 +1,35 @@
+div.container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    margin: 150px auto 0 auto;
+    row-gap: 20px;
+}
+
+div.red, div.blue, div.yellow {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+}
+
+div.row_wrap {
+    flex: 0 1 33%;
+    display: flex;
+    column-gap: 20px;
+}
+
+div.red {
+    background-color: red;
+    width: 33%;
+}
+
+div.blue {
+    background-color: blue;
+    width: 66%;
+}
+
+div.yellow {
+    background-color: yellow;
+    flex: 0 1 33%;
+}
