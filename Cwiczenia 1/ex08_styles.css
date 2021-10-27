@@ -1,0 +1,32 @@
+body {
+    box-sizing: border-box;
+}
+
+#form-container {
+    margin: 50px 150px;
+    width: 500px;
+    background: lightpink;
+    border-radius: 5px;
+    color: white;
+}
+
+input {
+    width: 95%;
+    margin: 4px 0 0 0;
+}
+
+#adr {
+    width: 42%;
+}
+
+#adrb {
+    width: 23%;
+}
+
+#adrf {
+    width: 22%;
+}
+
+.col1 {
+    width: 40%;
+}

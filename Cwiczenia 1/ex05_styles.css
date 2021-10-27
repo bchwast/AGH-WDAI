@@ -1,0 +1,39 @@
+body {
+    font: 1.2em Helvetica, Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+section {
+    width: 202px;
+    border: 3px solid cornflowerblue;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    border: 2px dotted rgb(96, 139, 168);
+    height: 265px;
+}
+
+.selected {
+    align-self: center;
+}
+
+.first {
+    box-sizing: border-box;
+    width: 200px;
+}
+
+.box>* {
+    padding: 20px;
+    border: 2px solid rgb(96, 139, 168);
+    border-radius: 5px;
+    background-color: rgba(96, 139, 168, .2);
+}
+

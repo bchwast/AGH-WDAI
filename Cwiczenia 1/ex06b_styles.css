@@ -1,0 +1,42 @@
+body {
+    font: 62.5% Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#nav_container {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 180px;
+}
+
+.nav_el {
+    border: dashed dimgrey;
+    border-width: 1px 1px 0 1px;
+    flex: 0 0 16.67%;
+}
+
+.nav_el > a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background: #E7E7E7 url("./images/link.png") no-repeat left center;
+    padding: 7px 5px 7px 30px;
+    display: block;
+}
+
+.nav_el > a:hover {
+    background: #B2F511 url("./images/go.png") no-repeat left center;
+    font-weight: bold;
+}
+
+#nav_features {
+    border-bottom: 1px dashed dimgrey;
+}
+
+#nav_features > a {
+    background: #FFFFFF url("./images/bg_here.png") no-repeat right center;
+    font-weight: bold;
+}
