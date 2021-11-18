@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#flex-container > div {
+    flex: 1;
+    height: 100vh;
+    width: 100vh;
+    align-self: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: flex 0.8s ease;
+}
+
+#flex-container > div:hover {
+    flex-grow: 4;
+}
+
+#d1 {
+    background-image: url("images/image-1.jpg");
+}
+
+#d2 {
+    background-image: url("images/image-2.jpg");
+}
+
+#d3 {
+    background-image: url("images/image-3.jpg");
+}
+
+#d4 {
+    background-image: url("images/image-4.jpg");
+}
+
+#d5 {
+    background-image: url("images/image-5.jpg");
+}
+
+@media only screen and (min-width: 768px) {
+    #flex-container {
+        flex-direction: row;
+    }
+}

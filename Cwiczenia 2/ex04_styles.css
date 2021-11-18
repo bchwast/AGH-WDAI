@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, serif;
+}
+
+#gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2% 0.5%;
+    box-shadow: 5px 5px 5px 5px #cccccc;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item > h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 5% 0 0 5%;
+}
+
+.item > h3 {
+    font-size: 1em;
+    font-weight: normal;
+    color: indianred;
+    margin: 1% 0 0 5%;
+}
+
+.item > p {
+    font-size: 0.7em;
+    color: gray;
+    margin: 5%;
+}
+
+.thin {
+    height: 1px;
+    border: 0;
+    background-color: grey;
+    margin: 10% 5% 5% 5%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 5%;
+    padding-top: 5%;
+}
+
+.button {
+    align-self: flex-start;
+    padding: 4%;
+    background-color: indianred;
+    color: white;
+    font-size: 0.81em;
+}
+
+.feedback {
+    align-self: flex-end;
+    margin: auto 5% auto auto;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'ci comments'
+        'hi likes';
+}
+
+.ci {
+    grid-area: ci;
+}
+
+.hi {
+    grid-area: hi;
+}
+
+.likes {
+    color: dimgrey;
+    grid-area: likes;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-left: 5%;
+    padding: 0.5%;
+}
+
+.comments {
+    color: dimgrey;
+    grid-area: comments;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-left: 5%;
+    padding: 0.5%;
+}
+
+@media only screen and (min-width: 768px) {
+    #gallery-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex: 1 0 45%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #gallery-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex: 1 0 17%;
+        margin: 0.5%;
+    }
+}

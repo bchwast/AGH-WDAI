@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif;
+}
+
+body {
+    background-color: limegreen;
+}
+
+#menu-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100vw;
+}
+
+#menu {
+    margin-top: 5%;
+    display: block;
+    width: 80%;
+    border-bottom-left-radius: 2% 5%;
+    border-bottom-right-radius: 2% 5%;
+    border-top-left-radius: 2% 5%;
+    border-top-right-radius: 2% 5%;
+    overflow: hidden;
+    list-style: none;
+}
+
+.item {
+    border-top: 1px solid #ef584a;
+    overflow: hidden;
+}
+
+.btn {
+    display: block;
+    padding: 5%;
+    background-color: indianred;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-size: 5vw;
+}
+
+.btn:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid indianred;
+    position: absolute;
+    right: 3%;
+    bottom: -10px;
+    z-index: 9;
+}
+
+.sub {
+    background-color: navy;
+    overflow: hidden;
+    transition: max-height 1s ease;
+    max-height: 0;
+}
+
+.sub  a {
+    display: block;
+    padding: 5% 7%;
+    font-size: 4vw;
+    color: white;
+    border-bottom: 1px solid lightseagreen;
+    position: relative;
+    text-decoration: none;
+}
+
+.sub a:before {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sub a:hover:before {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 1%;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    border-top: 6.5vw solid transparent;
+    border-left: 2.5vw solid limegreen;
+    border-bottom: 6.5vw solid transparent;
+}
+
+.sub a:after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sub a:hover:after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 1%;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    border-top: 6.5vw solid transparent;
+    border-left: 2.5vw solid limegreen;
+    border-bottom: 6.5vw solid transparent;
+}
+
+.sub a:hover {
+    background: navy;
+    background: linear-gradient(to bottom, navy 0%, navy 50%, cornflowerblue 51%, cornflowerblue 100%);
+    transition: all 0.3s;
+    border-bottom: 1px solid cornflowerblue;
+}
+
+.sub > a:last-child {
+    border: none;
+}
+
+.item:target .sub {
+    max-height: 50vh;
+}
+
+@media only screen and (min-width: 768px) {
+    #menu {
+        margin-top: 2%;
+        width: 40%;
+    }
+
+    .btn {
+        font-size: 4vh;
+    }
+
+    .sub a {
+        font-size: 3vh;
+    }
+
+    .sub a:hover:before {
+        border-left: none;
+    }
+
+    .sub a:hover:after {
+        border-left: none;
+    }
+}

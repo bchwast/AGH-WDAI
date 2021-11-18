@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif;
+    list-style: none;
+}
+
+#page-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "sidebar"
+        "ads"
+        "footer";
+    overflow: visible;
+    background-color: lightgoldenrodyellow;
+}
+
+#header {
+    display: flex;
+    grid-area: header;
+    background: linear-gradient(to bottom, grey, whitesmoke);
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    font-weight: bold;
+    font-size: 270%;
+}
+
+#nav {
+    display: flex;
+    grid-area: nav;
+    justify-content: space-between;
+    background-color: whitesmoke;
+}
+
+.btn {
+    border: 2px solid red;
+    padding: 1%;
+    font-size: 120%;
+    background-color: lightgrey;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: dimgrey;
+    color: white;
+}
+
+#main {
+    grid-area: main;
+    background: linear-gradient(to bottom, whitesmoke, dimgrey);
+}
+
+#posts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#posts > div {
+    background-color: rgba(154, 161, 156, 0.35);
+    margin-top: 3%;
+    width: 100%;
+}
+
+#posts > div:last-child {
+    margin-bottom: 3%;
+}
+
+#posts img {
+    display: block;
+    width: 10rem;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin: 2% ;
+}
+
+#posts h1 {
+    color: #303030;
+    padding: 1%;
+    font-size: 100%;
+}
+
+#posts p {
+    color: #303030;
+    font-size: 90%;
+    padding: 1%
+}
+
+#form {
+    transform: none !important;
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url("https://picsum.photos/id/428/1000/400");
+}
+
+#form * {
+    transform: none !important;
+}
+
+#left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#left * {
+    padding: 3%;
+}
+
+#left > div:first-child > h1 {
+    font-size: 150%;
+    background: -webkit-linear-gradient(left, limegreen, darkgreen);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#left > div > input {
+    width: 80%;
+    border: none;
+    padding: 2.5%;
+    color: #333333;
+    font-size: 70%;
+}
+
+#left > div > input:focus {
+    outline: none;
+}
+
+#left > div:last-child > input {
+    display: none;
+}
+
+#left > div:last-child > p {
+    display: inline;
+    color: white;
+    font-size: 80%;
+    background-color: mediumseagreen;
+    padding: 3% 6%;
+    border-bottom-left-radius: 10% 45%;
+    border-bottom-right-radius: 10% 45%;
+    border-top-left-radius: 10% 45%;
+    border-top-right-radius: 10% 45%;
+    transition: 0.3s ease;
+}
+
+#left > div:last-child > p:hover {
+    border: 3px solid white;
+}
+
+#radios {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+#radios > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#radios input {
+    display: none;
+}
+
+#radios label {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    outline: 3px solid mediumseagreen;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+#small:checked ~ #lsmall {
+    background-color: mediumseagreen;
+    border: 3px solid white;
+}
+
+#large:checked ~ #llarge {
+    background-color: mediumseagreen;
+    border: 3px solid white;
+
+}
+
+#radios p {
+    font-size: 80%;
+    white-space: nowrap;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    overflow: hidden;
+    background-color: lightgoldenrodyellow;
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#card > div {
+    background-color: lightgrey;
+    margin-top: 3%;
+    padding: 3%;
+    width: 100%;
+}
+
+#card > div > p {
+    font-size: 150%;
+}
+
+#card > div:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+#card > div:first-child img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    border-radius: 10%;
+}
+
+#socials {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+#socials a {
+    display: inline-block;
+    flex: 1 33%;
+}
+
+#socials img {
+    display: block;
+    width: 100%;
+}
+
+#ads {
+    grid-area: ads;
+    background-color: #B2F511;
+    min-height: 200px;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: #ef584a;
+    height: 10vh;
+}
+
+@media only screen and (min-width: 768px) {
+    #page-container {
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "sidebar main main main"
+            "ads footer footer footer";
+    }
+
+    #posts > div {
+        transform: skewX(-10deg);
+        width: 95%;
+    }
+
+    #posts img, #posts p, #posts h1 {
+        transform: skewX(10deg);
+    }
+
+    #sidebar {
+        position: sticky;
+        top: 0;
+        height: 80vh;
+    }
+
+    #card > div {
+        transform: skewX(5deg);
+        width: 85%;
+        padding: 5%;
+    }
+
+    #card > div > p, #card > div > h1, #card > div img {
+        transform: skewX(-5deg);
+    }
+
+    #card > div:first-child img {
+        width: 90%;
+        border-radius: 50%;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    #page-container {
+        grid-template-columns: 16.67% 16.67% 16.67% 16.67% 16.67% 16.67%;
+        grid-template-areas:
+            "header header header header header header"
+            "sidebar nav nav nav nav ads"
+            "sidebar main main main main ads"
+            "sidebar main main main main ads"
+            "sidebar main main main main ads"
+            "sidebar main main main main ads"
+            "footer footer footer footer footer footer";
+    }
+}

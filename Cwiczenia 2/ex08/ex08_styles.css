@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif;
+}
+
+#page-container {
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+}
+
+#page-container > header > h1 {
+    background: -webkit-linear-gradient(45deg, greenyellow, darkturquoise);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 7vw;
+    margin: 3%;
+    flex: 0 1 auto;
+}
+
+#page-container > main {
+    display: flex;
+    flex-direction: column;
+    margin: 7%;
+    flex: 1 1 auto;
+}
+
+#text-container {
+    color: dimgrey;
+    flex: 0 1 auto;
+}
+
+.text > h1 {
+    font-size: 4vw;
+}
+
+.text > p {
+    font-size: 3.5vw;
+    margin: 7% 0;
+}
+
+#text3 {
+    display: inline;
+    color: green;
+    padding-bottom: 1%;
+    border-bottom: 0.5vw solid green;
+    font-size: 3.5vw;
+}
+
+#pic-container {
+    position: relative;
+    margin: 10% 0;
+    flex: 1 1 auto;
+    height: 25vh;
+}
+
+#pic-container img {
+    display: block;
+    position: absolute;
+    width: 35vw;
+    height: auto;
+    box-shadow: 8px 8px 43px 0 rgba(66, 68, 90, 1);
+}
+
+#pic1 img {
+    top: 10%;
+    z-index: 1;
+}
+
+#pic2 img {
+    left: 30%;
+    z-index: 3;
+}
+
+#pic3 img {
+    left: 60%;
+    top: 15%;
+    z-index: 2;
+}
+
+#pic-container img:hover {
+    z-index: 4;
+    width: 37vw;
+    border: 1vw solid transparent;
+    border-radius: 3%;
+    outline: 1vw solid green;
+}
+
+.dummy {
+    align-self: flex-end;
+    flex: 0 1 1px;
+}
+
+@media only screen and (min-width: 768px) {
+    #page-container > main {
+        flex-direction: row;
+        margin: 3%;
+    }
+
+    #page-container > header > h1 {
+        font-size: 4vw;
+    }
+
+    .text > h1 {
+        font-size: 1.5vw;
+    }
+
+    .text > p {
+        font-size: 1vw;
+    }
+
+    #text3 {
+        font-size: 1vw;
+        border-bottom-width: 0.125vw;
+    }
+    #text-container {
+        width: 50vw;
+    }
+
+    #pic-container img {
+        width: 22vw;
+    }
+
+    #pic1 img {
+        top: -10vw;
+        left: 5vw;
+        z-index: 1;
+    }
+
+    #pic2 img {
+        top: -4vw;
+        left: 20vw;
+        z-index: 2;
+    }
+
+    #pic3 img {
+        top: 3vw;
+        left: 10vw;
+        z-index: 3;
+    }
+
+    #pic-container img:hover {
+        width: 24vw;
+    }
+}
