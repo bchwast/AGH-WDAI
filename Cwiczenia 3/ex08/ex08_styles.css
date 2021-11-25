@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#balloon {
+    font-size: 50px;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 20vw;
+    background-color: grey;
+    z-index: 100;
+    color: white;
+    padding: 1%;
+}

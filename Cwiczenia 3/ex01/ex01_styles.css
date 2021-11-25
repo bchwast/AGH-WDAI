@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 5px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 30px;
+}

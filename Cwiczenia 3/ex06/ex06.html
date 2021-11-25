@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex06_styles.css">
+    <script src="ex06_script.js" defer></script>
+    <script src="https://kit.fontawesome.com/f81d4ff4fb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<main id="app-container">
+    <section id="users-container">
+        <div class="user">
+            <div class="data">
+                <h4 class="name">Grzegorz Rogus</h4>
+                <p class="phone">500 600 700</p>
+            </div>
+        </div>
+        <div class="user">
+            <div class="data">
+                <h4 class="name">Jacek Dajda</h4>
+                <p class="phone">500 600 700</p>
+            </div>
+        </div>
+    </section>
+    <section id="form-container">
+        <div>
+            <label for="name">IMIĘ I NAZWISKO</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="phone">TELEFON</label>
+            <input type="text" id="phone">
+        </div>
+        <div>
+            <div id="add" onclick="addPerson()">
+                Dodaj
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

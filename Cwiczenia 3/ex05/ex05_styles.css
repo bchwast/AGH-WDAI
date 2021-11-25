@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main > div:first-child, main > div:last-child {
+    position: relative;
+    width: 100vw;
+    height: 60vw;
+}
+
+main > div:first-child div {
+    position: absolute;
+    text-align: center;
+}
+
+#one {
+    background-color: lightsteelblue;
+    top: 5vw;
+    left: 25vw;
+    width: 50vw;
+    height: 50vw;
+    z-index: 1;
+}
+
+#two {
+    background-color: red;
+    top: 10vw;
+    left: 10vw;
+    width: 30vw;
+    height: 30vw;
+    z-index: 1;
+}
+
+#three {
+    background-color: yellow;
+    top: 10vw;
+    left: 10vw;
+    width: 10vw;
+    height: 10vw;
+    z-index: 1;
+}
+
+button {
+    position: absolute;
+    padding: 1vw;
+}
+
+button:first-child {
+    left: 25vw;
+}
+
+button:last-child {
+    right: 25vw;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+
+    main > div:first-child, main > div:last-child {
+        width: 50vw;
+        height: 60vw;
+    }
+
+    #one {
+        top: 5vw;
+        left: 10vw;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    #two {
+        top: 5vw;
+        left: 5vw;
+        width: 20vw;
+        height: 20vw;
+    }
+
+    #three {
+        top: 5vw;
+        left: 5vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    button {
+        top: 5vw;
+    }
+
+    button:first-child {
+        left: 5vw;
+    }
+
+    button:last-child {
+        left: 15vw;
+    }
+}

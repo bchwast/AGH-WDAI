@@ -1,0 +1,52 @@
+{
+  "produktyA": {
+    "Samochody": {
+      "nazwa": [
+        "Fiat",
+        "Bmw"
+      ]
+    },
+    "Hulajnogi": [
+    ],
+    "Słodycze": {
+      "nazwa": [
+        "Czekolada",
+        "Cukierki"
+      ]
+    },
+    "Soki": {
+      "nazwa": [
+        "Jupi",
+        "Kubuś",
+        "Hoop"
+      ]
+    },
+    "Sery": {
+      "nazwa": [
+        "Gorgonzola",
+        "Brie",
+        "Roquefort"
+      ]
+    },
+    "Pilarki": {
+      "nazwa": [
+        "Stihl",
+        "Husqvarna"
+      ]
+    },
+    "Maszyny CNC": {
+      "nazwa": [
+        "Haas"
+      ]
+    },
+    "Kiełbasy": {
+      "nazwa": [
+        "Podwawelska",
+        "Śląska",
+        "Krakowska"
+      ]
+    },
+    "Masła": [
+    ]
+  }
+}

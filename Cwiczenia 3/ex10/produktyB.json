@@ -1,0 +1,52 @@
+{
+  "produktyB": {
+    "Samochody": {
+      "nazwa": [
+        "Fiat",
+        "Mercedes"
+      ]
+    },
+    "Rowery": {
+      "nazwa": [
+        "Kross",
+        "Merida"
+      ]
+    },
+    "Soki": {
+      "nazwa": [
+        "Jupi",
+        "Kubuś"
+      ]
+    },
+    "Sery": {
+      "nazwa": [
+        "Camembert"
+      ]
+    },
+    "Słodycze": {
+      "nazwa": [
+        "Guma balonowa",
+        "Cukierki"
+      ]
+    },
+    "Masła": {
+      "nazwa": [
+        "Osełka",
+        "Mleczna dolina"
+      ]
+    },
+    "Wiertarki": {
+      "nazwa": [
+        "Bosch",
+        "Parkside"
+      ]
+    },
+    "Mięsa": {
+      "nazwa": [
+        "Drób",
+        "Wieprzowina",
+        "Wołowina"
+      ]
+    }
+  }
+}

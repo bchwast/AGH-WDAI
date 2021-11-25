@@ -1,0 +1,26 @@
+{
+  "produktyC": {
+    "Ryby": {
+      "nazwa": [
+        "Tuńczyk",
+        "Dorsz",
+        "Pstrąg"
+      ]
+    },
+    "Grzyby": {
+      "nazwa": [
+        "Borowik",
+        "Pieczarka",
+        "Muchomor"
+      ]
+    },
+    "Mięsa": [
+    ],
+    "Słodycze": {
+      "nazwa": [
+        "Lizak",
+        "Czekolada"
+      ]
+    }
+  }
+}

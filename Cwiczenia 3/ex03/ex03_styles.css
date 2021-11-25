@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#buttons {
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    gap: 15vw;
+}
+
+button {
+    padding: 5px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.el {
+    padding: 10px;
+    border: 2px solid black;
+    margin: 3px;
+}
