@@ -50,9 +50,21 @@ header > span {
 }
 
 #img-container {
+    position: relative;
     flex: 1 15%;
     text-align: center;
     padding: 4%;
+}
+
+#icon {
+    position: absolute;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 120%;
+    padding: 2%;
+    border-radius: 50%;
+    left: 35%;
+    top: 15%;
 }
 
 #image {

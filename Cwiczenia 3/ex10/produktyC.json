@@ -1,26 +1,44 @@
 {
-  "produktyC": {
-    "Ryby": {
-      "nazwa": [
-        "Tuńczyk",
-        "Dorsz",
-        "Pstrąg"
+  "produktyC": [
+    {
+      "Ryby": [
+        {
+          "nazwa": "Tuńczyk"
+        },
+        {
+          "nazwa": "Dorsz"
+        },
+        {
+          "nazwa": "Pstrąg"
+        }
       ]
     },
-    "Grzyby": {
-      "nazwa": [
-        "Borowik",
-        "Pieczarka",
-        "Muchomor"
+    {
+      "Grzyby": [
+        {
+          "nazwa": "Borowik"
+        },
+        {
+          "nazwa": "Pieczarka"
+        },
+        {
+          "nazwa": "Muchomor"
+        }
       ]
     },
-    "Mięsa": [
-    ],
-    "Słodycze": {
-      "nazwa": [
-        "Lizak",
-        "Czekolada"
+    {
+      "Mięsa": [
+      ]
+    },
+    {
+      "Słodycze": [
+        {
+          "nazwa": "Lizak"
+        },
+        {
+          "nazwa": "Czekolada"
+        }
       ]
     }
-  }
+  ]
 }

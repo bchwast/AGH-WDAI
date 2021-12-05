@@ -1,22 +1,20 @@
 let clicks = 0;
-
-function enableButton() {
-    let button = document.getElementById("butt");
-    button.disabled = false;
-}
-
-function disableButton() {
-    let button = document.getElementById("butt");
-    let counter = document.getElementById("counter");
-
-    button.disabled = true;
-    counter.innerHTML = "0";
-    clicks = 0;
-}
+let enable = document.getElementById("enable");
+let btn = document.getElementById("btn");
+let disable = document.getElementById("disable")
+let counter = document.getElementById("counter");
 
 function clickButton() {
-    let counter = document.getElementById("counter");
-
     clicks++;
-    counter.innerHTML = clicks;
+    counter.innerText = clicks;
 }
+
+enable.addEventListener("click", () => {
+    btn.addEventListener("click", clickButton)
+})
+
+disable.addEventListener("click", () => {
+    btn.removeEventListener("click", clickButton);
+    clicks = 0;
+    counter.innerText = clicks;
+})

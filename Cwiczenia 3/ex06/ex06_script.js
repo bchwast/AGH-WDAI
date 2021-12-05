@@ -1,22 +1,17 @@
 let usersList = document.getElementsByClassName("user");
+let addUser = document.getElementById("add");
 
 for (let i = 0; i < usersList.length; i++) {
     let button = document.createElement("div");
     button.className = "remove";
     button.innerHTML = "<i class=\"fas fa-trash-alt\"></i>";
     usersList[i].appendChild(button);
+    button.addEventListener("click", () => {
+        usersList[i].style.display = "none";
+    });
 }
 
-let remove = document.getElementsByClassName("remove");
-
-for (let i = 0; i < remove.length; i++) {
-    remove[i].onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-    }
-}
-
-function addPerson() {
+addUser.addEventListener("click", () => {
     console.log("hi");
     let users = document.getElementById("users-container");
     let entry = document.createElement("div");
@@ -59,14 +54,11 @@ function addPerson() {
         entry.appendChild(button);
         users.appendChild(entry);
 
-        for (let i = 0; i < remove.length; i++) {
-            remove[i].onclick = function() {
-                let div = this.parentElement;
-                div.style.display = "none";
-            }
-        }
+        button.addEventListener("click", () => {
+            entry.style.display = "none";
+        })
 
         document.getElementById("name").value = "";
         document.getElementById("phone").value = "";
     }
-}
+});

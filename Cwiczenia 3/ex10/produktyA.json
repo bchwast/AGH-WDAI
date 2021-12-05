@@ -1,52 +1,88 @@
 {
-  "produktyA": {
-    "Samochody": {
-      "nazwa": [
-        "Fiat",
-        "Bmw"
+  "produktyA": [
+    {
+      "Samochody": [
+        {
+          "nazwa": "Fiat"
+        },
+        {
+          "nazwa": "Bmw"
+        }
       ]
     },
-    "Hulajnogi": [
-    ],
-    "Słodycze": {
-      "nazwa": [
-        "Czekolada",
-        "Cukierki"
+    {
+      "Hulajnogi": [
       ]
     },
-    "Soki": {
-      "nazwa": [
-        "Jupi",
-        "Kubuś",
-        "Hoop"
+    {
+      "Słodycze": [
+        {
+          "nazwa": "Czekolada"
+        },
+        {
+          "nazwa": "Cukierki"
+        }
       ]
     },
-    "Sery": {
-      "nazwa": [
-        "Gorgonzola",
-        "Brie",
-        "Roquefort"
+    {
+      "Soki": [
+        {
+          "nazwa": "Jupi"
+        },
+        {
+          "nazwa": "Kubuś"
+        },
+        {
+          "nazwa": "Hoop"
+        }
       ]
     },
-    "Pilarki": {
-      "nazwa": [
-        "Stihl",
-        "Husqvarna"
+    {
+      "Sery": [
+        {
+          "nazwa": "Gorgonzola"
+        },
+        {
+          "nazwa": "Brie"
+        },
+        {
+          "nazwa": "Roquefort"
+        }
       ]
     },
-    "Maszyny CNC": {
-      "nazwa": [
-        "Haas"
+    {
+      "Pilarki": [
+        {
+          "nazwa": "Stihl"
+        },
+        {
+          "nazwa": "Husqvarna"
+        }
       ]
     },
-    "Kiełbasy": {
-      "nazwa": [
-        "Podwawelska",
-        "Śląska",
-        "Krakowska"
+    {
+      "Maszyny CNC": [
+        {
+          "nazwa": "Haas"
+        }
       ]
     },
-    "Masła": [
-    ]
-  }
+    {
+      "Kiełbasy": [
+        {
+          "nazwa": "Podwawelska"
+        },
+        {
+          "nazwa": "Śląska"
+        },
+        {
+          "nazwa": "Krakowska"
+        }
+      ]
+    },
+    {
+      "Masła": [
+      ]
+    }
+  ]
 }

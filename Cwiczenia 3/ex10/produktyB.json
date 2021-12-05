@@ -1,52 +1,84 @@
 {
-  "produktyB": {
-    "Samochody": {
-      "nazwa": [
-        "Fiat",
-        "Mercedes"
+  "produktyB": [
+    {
+      "Samochody": [
+        {
+          "nazwa": "Fiat"
+        },
+        {
+          "nazwa": "Mercedes"
+        }
       ]
     },
-    "Rowery": {
-      "nazwa": [
-        "Kross",
-        "Merida"
+    {
+      "Rowery": [
+        {
+          "nazwa": "Kross"
+        },
+        {
+          "nazwa": "Merida"
+        }
       ]
     },
-    "Soki": {
-      "nazwa": [
-        "Jupi",
-        "Kubuś"
+    {
+      "Soki": [
+        {
+          "nazwa": "Jupi"
+        },
+        {
+          "nazwa": "Kubuś"
+        }
       ]
     },
-    "Sery": {
-      "nazwa": [
-        "Camembert"
+    {
+      "Sery": [
+        {
+          "nazwa": "Camembert"
+        }
       ]
     },
-    "Słodycze": {
-      "nazwa": [
-        "Guma balonowa",
-        "Cukierki"
+    {
+      "Słodycze": [
+        {
+          "nazwa": "Guma balonowa"
+        },
+        {
+          "nazwa": "Cukierki"
+        }
       ]
     },
-    "Masła": {
-      "nazwa": [
-        "Osełka",
-        "Mleczna dolina"
+    {
+      "Masła": [
+        {
+          "nazwa": "Osełka"
+        },
+        {
+          "nazwa": "Mleczna dolina"
+        }
       ]
     },
-    "Wiertarki": {
-      "nazwa": [
-        "Bosch",
-        "Parkside"
+    {
+      "Wiertarki": [
+        {
+          "nazwa": "Bosch"
+        },
+        {
+          "nazwa": "Parkside"
+        }
       ]
     },
-    "Mięsa": {
-      "nazwa": [
-        "Drób",
-        "Wieprzowina",
-        "Wołowina"
+    {
+      "Mięsa": [
+        {
+          "nazwa": "Drób"
+        },
+        {
+          "nazwa": "Wieprzowina"
+        },
+        {
+          "nazwa": "Wołowina"
+        }
       ]
     }
-  }
+  ]
 }

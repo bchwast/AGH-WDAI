@@ -47,16 +47,26 @@ main > div:first-child div {
     z-index: 1;
 }
 
-button {
+main > div:last-child > * {
     position: absolute;
     padding: 1vw;
 }
 
-button:first-child {
+#prop_switch {
     left: 25vw;
 }
 
-button:last-child {
+#counter {
+    border: 3px solid black;
+    width: 10vw;
+    height: 10vh;
+    left: 30vw;
+    top: 10vw;
+    font-size: 200%;
+    text-align: center;
+}
+
+#reset {
     right: 25vw;
 }
 
@@ -97,6 +107,10 @@ button:last-child {
 
     button:first-child {
         left: 5vw;
+    }
+
+    #counter {
+        left: 0;
     }
 
     button:last-child {

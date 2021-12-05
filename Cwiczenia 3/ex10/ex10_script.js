@@ -1,32 +1,36 @@
-function deleteEmpty(obj) {
-    for (let i in obj) {
-        if (obj[i].constructor === Array) {
-            delete obj[i];
+function toMap(json) {
+    let map = new Map();
+    for (let catObj of json) {
+        let catName = Object.keys(catObj)[0];
+        let catArray = catObj[Object.keys(catObj)[0]];
+        if (catArray.length !== 0) {
+            let prodArray = [];
+            for (let prodObj of catArray) {
+                let prodName = prodObj[Object.keys(prodObj)[0]];
+                prodArray.push(prodName);
+            }
+            map.set(catName, prodArray);
         }
     }
-    return obj;
+    return map;
 }
 
-function deepMerge(objA, objB) {
-   for (let i in objB) {
-       if (i in objA) {
-           for (let j in objB[i]["nazwa"]) {
-               if (! objA[i]["nazwa"].includes(objB[i]["nazwa"][j])) {
-                   objA[i]["nazwa"].push(objB[i]["nazwa"][j]);
-               }
-           }
-       }
-       else {
-           objA[i] = objB[i];
-       }
-   }
-    return objA;
+function deepMerge(prod1, prod2) {
+    for (let name of prod2.keys()) {
+        if (prod1.has(name)) {
+            prod1.set(name, [...new Set([...prod1.get(name), ...prod2.get(name)])]);
+            }
+        else {
+            prod1.set(name, prod2.get(name));
+        }
+    }
+    return prod1;
 }
 
 function createCounter(prod) {
-    let counter = {};
-    for (let i in prod) {
-        counter[i] = 0;
+    let counter = new Map();
+    for (let i of prod.keys()) {
+        counter.set(i, 0);
     }
     return counter;
 }
@@ -42,31 +46,33 @@ function show(toMain) {
     main.replaceChildren(prods);
 }
 
-async function loadA() {
+async function site() {
     const responseA = await fetch("http://localhost:3000/produktyA");
-    let prodA = await responseA.json();
-    prodA = deleteEmpty(prodA);
+    let objA = await responseA.json();
+    let prodA = toMap(objA);
 
     const responseB = await fetch("http://localhost:3001/produktyB");
-    let prodB = await responseB.json();
-    prodB = deleteEmpty(prodB);
+    let objB = await responseB.json();
+    let prodB = toMap(objB);
 
     const responseC = await fetch("http://localhost:3002/produktyC");
-    let prodC = await responseC.json();
-    prodC = deleteEmpty(prodC);
+    let objC = await responseC.json();
+    let prodC = toMap(objC);
 
     let prod = deepMerge(prodA, prodB);
     prod = deepMerge(prod, prodC);
+
     let counter = createCounter(prod);
     let toMain = [];
 
     let menu = document.getElementById("menu-container");
-    for (let i in prod) {
+    for (let i of prod.keys()) {
         let categoryWrapper = document.createElement("div");
         let category = document.createElement("div");
         let categorySwitch = document.createElement("input");
         let categorySwitchL = document.createElement("label");
-        let categoryIndicator = document.createElement("div");
+        let categoryIndicator = document.createElement("input");
+        let categoryIndicatorL = document.createElement("label");
         let categoryDesc = document.createElement("p");
         let productContainer = document.createElement("div");
         category.className = "category";
@@ -77,6 +83,10 @@ async function loadA() {
         categorySwitchL.htmlFor = "cat-" + i;
         categorySwitchL.innerHTML = "<i class=\"fas fa-chevron-right\"></i>";
         categoryIndicator.className = "category-indicator";
+        categoryIndicator.id = "cat-ind-" + i;
+        categoryIndicator.type = "checkbox";
+        categoryIndicatorL.className = "category-indicator-label";
+        categoryIndicatorL.htmlFor = "cat-ind-" + i;
         categoryDesc.innerText = i;
         productContainer.className = "product-container";
 
@@ -91,7 +101,7 @@ async function loadA() {
             }
         });
 
-        for (let j of prod[i]["nazwa"]) {
+        for (let j of prod.get(i)) {
             let product = document.createElement("div");
             let productSwitch = document.createElement("input");
             let productSwitchL = document.createElement("label");
@@ -107,34 +117,33 @@ async function loadA() {
 
             productSwitch.addEventListener("change", (event) => {
                 if (event.currentTarget.checked) {
+                    counter.set(i, counter.get(i) + 1);
                     productSwitchL.innerHTML = "<i class=\"fas fa-check\"></i>";
                     productSwitchL.style.backgroundColor = "deeppink";
-                    categoryIndicator.innerHTML = "<i class=\"fas fa-minus\"></i>";
-                    categoryIndicator.style.backgroundColor = "deeppink";
-                    counter[i]++;
+                    categoryIndicatorL.innerHTML = "<i class=\"fas fa-minus\"></i>";
+                    categoryIndicatorL.style.backgroundColor = "deeppink";
                     toMain.push(j);
                     show(toMain);
-                    if (counter[i] === prod[i]["nazwa"].length) {
-                        categoryIndicator.innerHTML = "<i class=\"fas fa-check\"></i>";
-                        categorySwitch.checked = true;
+                    if (counter.get(i) === prod.get(i).length) {
+                        categoryIndicatorL.innerHTML = "<i class=\"fas fa-check\"></i>";
                     }
                 }
                 else {
+                    if (counter.get(i) === prod.get(i).length) {
+                        categoryIndicatorL.innerHTML = "<i class=\"fas fa-minus\"></i>";
+                    }
+                    counter.set(i, counter.get(i) - 1);
                     productSwitchL.innerHTML = "";
                     productSwitchL.style.backgroundColor = "white";
-                    counter[i]--;
                     let index = toMain.indexOf(j);
                     toMain.splice(index, 1);
                     show(toMain);
-                    if (counter[i] > 0) {
-                        categoryIndicator.innerHTML = "<i class=\"fas fa-minus\"></i>";
-                    }
-                    else {
-                        categoryIndicator.innerHTML = "";
-                        categoryIndicator.style.backgroundColor = "white";
-                        categorySwitch.checked = false;
+                    if (counter.get(i) === 0) {
+                        categoryIndicatorL.style.backgroundColor = "white";
+                        categoryIndicatorL.innerHTML = "";
                     }
                 }
+
             })
 
             product.appendChild(productSwitch);
@@ -143,15 +152,32 @@ async function loadA() {
             productContainer.appendChild(product);
         }
 
+        categoryIndicator.addEventListener("change", (event) => {
+            if (event.currentTarget.checked) {
+                for (let j of prod.get(i)) {
+                    if (! document.getElementById("prod-" + j).checked) {
+                        document.getElementById("prod-" + j).click();
+                    }
+                }
+            }
+            else {
+                for (let j of prod.get(i)) {
+                    if (document.getElementById("prod-" + j).checked) {
+                        document.getElementById("prod-" + j).click();
+                    }
+                }
+            }
+        })
+
         category.appendChild(categorySwitch);
         category.appendChild(categorySwitchL);
         category.appendChild(categoryIndicator);
+        category.appendChild(categoryIndicatorL);
         category.appendChild(categoryDesc);
         categoryWrapper.appendChild(category);
         categoryWrapper.appendChild(productContainer);
         menu.appendChild(categoryWrapper);
     }
-
 }
 
-loadA();
+site();

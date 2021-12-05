@@ -43,6 +43,10 @@
 }
 
 .category-indicator {
+    display: none;
+}
+
+.category-indicator-label {
     width: 3vh;
     height: 3vh;
     border: 1px solid dimgrey;

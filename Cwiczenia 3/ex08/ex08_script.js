@@ -34,7 +34,7 @@ function balloonMenu(event) {
     if (size <= 200) {
         if (event.ctrlKey && event.button === 2) {
             event.preventDefault();
-            menu.innerText = "Size of the balloon is: " + size;
+            menu.innerText = "Size of the balloon is: " + (size * 100) / (200 - 5) + " %";
             menu.style.display = "block";
             menu.style.left = (event.pageX - 10)+"px";
             menu.style.top = (event.pageY - 10)+"px";
