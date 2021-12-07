@@ -1,0 +1,20 @@
+<h2>{{actor.firstName}} {{actor.lastName}} from {{actor.movie}}</h2>
+<div>
+  <label for="firstName">First Name: </label>
+  <input id="firstName" [(ngModel)]="actor.firstName" placeholder="firstName">
+</div>
+<div>
+  <label for="lastName">Last Name: </label>
+  <input id="lastName" [(ngModel)]="actor.lastName" placeholder="lastName">
+</div>
+<div>
+  <label for="movie">Favourite Movie: </label>
+  <input id="movie" [(ngModel)]="actor.movie" placeholder="movie">
+</div>
+<div>
+  {{2 + 2}}
+  {{actor.firstName.length}}
+  {{actor.firstName.toUpperCase()}}
+  {{a}}
+  {{window}}
+</div>
