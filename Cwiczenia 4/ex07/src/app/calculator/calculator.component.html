@@ -1,0 +1,38 @@
+<div class="grid-container">
+  <header class="header">
+    <h1>Calculator</h1>
+  </header>
+  <div class="result">
+    <p>{{result}}</p>
+  </div>
+  <div class="input">
+    <p>{{input}}</p>
+  </div>
+  <div class="operator">
+    <p>{{operator}}</p>
+  </div>
+
+  <button id="coma" class="number-button" type="button" (click)="pressNumber('.')">.</button>
+  <button id="zero" class="number-button" type="button" (click)="pressNumber('0')">0</button>
+  <button id="one" class="number-button" type="button" (click)="pressNumber('1')">1</button>
+  <button id="two" class="number-button" type="button" (click)="pressNumber('2')">2</button>
+  <button id="three" class="number-button" type="button" (click)="pressNumber('3')">3</button>
+  <button id="four" class="number-button" type="button" (click)="pressNumber('4')">4</button>
+  <button id="five" class="number-button" type="button" (click)="pressNumber('5')">5</button>
+  <button id="six" class="number-button" type="button" (click)="pressNumber('6')">6</button>
+  <button id="seven" class="number-button" type="button" (click)="pressNumber('7')">7</button>
+  <button id="eight" class="number-button" type="button" (click)="pressNumber('8')">8</button>
+  <button id="nine" class="number-button" type="button" (click)="pressNumber('9')">9</button>
+  <button id="negative" class="number-button" type="button" (click)="pressNegative()">+/-</button>
+
+  <button id="add" class="operator-button" type="button" (click)="pressOperator('+')">+</button>
+  <button id="subtract" class="operator-button" type="button" (click)="pressOperator('-')">-</button>
+  <button id="multiply" class="operator-button" type="button" (click)="pressOperator('*')">*</button>
+  <button id="divide" class="operator-button" type="button" (click)="pressOperator('/')">/</button>
+  <button id="sqrt" class="operator-button" type="button" (click)="pressOperator('s')">sqrt</button>
+
+  <button id="show" type="button" (click)="pressResult()">=</button>
+
+  <button id="delete" type="button" (click)="pressDelete()">C</button>
+  <button id="clear" type="button" (click)="pressClear()">AC</button>
+</div>
