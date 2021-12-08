@@ -1,0 +1,10 @@
+
+<app-child
+  (clicks)="displayCounter($event)"
+  [disable]="disable"
+  (enable)="enable()">
+</app-child>
+
+<div class="counter" >
+  Number of clicks: {{counter}}
+</div>
