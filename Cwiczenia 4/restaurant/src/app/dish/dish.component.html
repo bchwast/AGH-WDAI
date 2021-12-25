@@ -1,0 +1,43 @@
+<div class="dish-container" [ngStyle]="{'background-color': available(dish) <+ 3 ? 'orange' : null,
+  'border-color': dish == dishesListService.mostExpensive ? 'green' : (dish == dishesListService.leastExpensive) ? 'red' : null}">
+  <h3 class="dish-name">
+    {{dish.name | uppercase}}
+  </h3>
+  <picture class="dish-picture">
+    <img src="{{dish.photos[0]}}" alt="picture of {{dish.name}}">
+  </picture>
+  <p class="dish-cuisine">
+    {{dish.cuisine | uppercase}}
+  </p>
+  <p class="dish-type">
+    {{dish.type}}
+  </p>
+  <p class="dish-category">
+    {{dish.category}}
+  </p>
+  <p class="dish-price" [hidden]="available(dish) <= 0">
+    {{dish.price * cartCurrencyService.currencies[cartCurrencyService.currentCurrency].value}}
+    {{cartCurrencyService.currencies[cartCurrencyService.currentCurrency].symbol}}
+  </p>
+  <p class="dish-unavailable" [hidden]="available(dish) > 0">
+        Dish unavailable
+  </p>
+  <button class="dish-add" (click)="cartCurrencyService.addToCart(dish)"
+          [hidden]="!canAddToCart(dish)">
+    +
+  </button>
+  <button class="dish-remove" (click)="cartCurrencyService.removeFromCart(dish)">
+    -
+  </button>
+  <button class="dish-delete" (click)="deleteDish()">
+    <fa-icon [icon]="faTrash"></fa-icon>
+  </button>
+  <p class="dish-ordered" [ngStyle]="{'background-color': dish.ordered > 10
+      ? 'blue' : 'darkorange'}">{{dish.ordered}}</p>
+  <p class="dish-rating">
+    <span *ngFor="let star of stars">
+      <img class="dish-star" [src]="dish.rating >= star ? '../../assets/images/gold_star.png' : '../../assets/images/black_star.png'"
+      (click)="addRating(star)">
+    </span>
+  </p>
+</div>

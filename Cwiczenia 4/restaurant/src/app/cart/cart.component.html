@@ -1,0 +1,7 @@
+<div class="cart-container">
+  <h2>Cart</h2>
+  <div class="cart-item" *ngFor="let item of cartCurrencyService.cart">
+    {{item.name}} x {{item.quantity}}
+  </div>
+  <h3>Value: {{cartCurrencyService.getOrdersValue() + cartCurrencyService.currencies[cartCurrencyService.currentCurrency].symbol}}</h3>
+</div>

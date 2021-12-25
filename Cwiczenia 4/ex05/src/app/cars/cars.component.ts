@@ -12,9 +12,9 @@ export class CarsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectedBrand = null;
-  selectedModel = null;
-  selectedColor = null;
+  selectedBrand = "";
+  selectedModel = "";
+  selectedColor = "";
 
   public models: Array<Model> = [];
   public colors: Array<string> = [];
@@ -67,13 +67,17 @@ export class CarsComponent implements OnInit {
 
   changeBrand() {
     this.models = this.cars.find((car: Car) => car.brand == this.selectedBrand)!.models;
-    this.selectedModel = null;
-    this.selectedColor = null;
+    this.selectedModel = "";
+    this.selectedColor = "";
   }
 
   changeModel() {
-    this.selectedColor = null;
+    this.selectedColor = "";
     this.colors = this.models.find((model: Model) => model.name == this.selectedModel)!.colors;
+  }
+
+  changeColor(color: string) {
+    this.selectedColor = color;
   }
 
 }

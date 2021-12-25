@@ -10,7 +10,7 @@
     </select>
   </div>
 
-  <div class="model-container" [hidden]="selectedBrand == null">
+  <div class="model-container" [hidden]="selectedBrand == ''">
     <label for="models">Choose a model: </label>
     <select name="models" id="models" [(ngModel)]="selectedModel" (change)="changeModel()">
       <option *ngFor="let model of models" [value]="model.name">
@@ -19,15 +19,13 @@
     </select>
   </div>
 
-  <div class="color-container" [hidden]="selectedModel == null">
-    <label for="colors">Choose a color: </label>
-    <select name="colors" id="colors" [(ngModel)]="selectedColor" [ngStyle]="{'background-color': selectedColor}">
-      <option *ngFor="let color of colors" [value]="color" [ngStyle]="{'background-color': color}">
-      </option>
-    </select>
+  <div class="color-container">
+    <p [hidden]="selectedModel == ''">Choose a color: </p>
+    <div class="color-block" *ngFor="let color of colors"
+          [ngStyle]="{'background-color': color}" (click)="changeColor(color)" [hidden]="selectedModel == ''"></div>
   </div>
 
-  <div class="result" [hidden]="selectedColor == null" >
+  <div class="result" [hidden]="selectedColor == ''" >
     <h3>You've chosen {{selectedColor}} {{selectedBrand}} {{selectedModel}}</h3>
   </div>
 </div>
