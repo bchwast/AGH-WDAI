@@ -1,5 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { Dish } from "../dish";
+import {Pipe, PipeTransform} from '@angular/core';
+import {Dish} from "../dish";
 
 @Pipe({
   name: 'filterDishes',
@@ -36,7 +36,8 @@ export class FilterPipe implements PipeTransform {
       output = current;
     }
     if (output && minPrice >= 0 && maxPrice >= 0) {
-      output = output.filter(dish => minPrice <= dish.price * currency && dish.price * currency <= maxPrice)
+      output = output.filter(dish => minPrice <= Number((dish.price * currency).toFixed(2)) &&
+        Number((dish.price).toFixed(2)) * currency <= maxPrice)
     }
     output.sort((a, b) => a.name.localeCompare(b.name))
     return output;

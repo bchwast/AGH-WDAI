@@ -1,4 +1,4 @@
-import { Dish } from './dish'
+import {Dish} from './dish'
 
 export const DISHES: Dish[] = [
   {
@@ -14,7 +14,7 @@ export const DISHES: Dish[] = [
     description: "Delicious italian pasta",
     photos: ["https://www.unileverfoodsolutions.pl/dam/global-ufs/mcos/NEE/calcmenu/recipes/PL-recipes/general/spaghetti-bolognese/main-header.jpg"],
     rating: 0,
-    ratings : []
+    ratings: []
   },
   {
     id: 1,

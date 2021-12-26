@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { Dish } from "../dish";
-import { Entry } from "../entry";
-import { DishesListService } from "../dishes-list-service/dishes-list.service";
+import {Injectable} from '@angular/core';
+import {Dish} from "../dish";
+import {Entry} from "../entry";
+import {DishesListService} from "../dishes-list-service/dishes-list.service";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CartCurrencyService {
-  currencies: {[key: string]: {value: number, symbol: string}} =
+  currencies: { [key: string]: { value: number, symbol: string } } =
     {
       'eur': {value: 1, symbol: '€'},
       'usd': {value: 0.8, symbol: '$'}
@@ -17,7 +17,8 @@ export class CartCurrencyService {
   cart: Entry[] = [];
   ordersAmm = 0;
 
-  constructor(public dishesListService: DishesListService) { }
+  constructor(public dishesListService: DishesListService) {
+  }
 
   changeCurrency(curr: any) {
     this.currentCurrency = curr;
@@ -29,9 +30,8 @@ export class CartCurrencyService {
         if (entry.id == dish.id) {
           entry.quantity++
         }
-        })
-      }
-    else {
+      })
+    } else {
       this.cart.push({id: dish.id, name: dish.name, quantity: 1});
     }
     dish.ordered++;
@@ -44,8 +44,7 @@ export class CartCurrencyService {
         if (entry.quantity > 1) {
           entry.quantity--;
           dish.ordered--;
-        }
-        else {
+        } else {
           this.cart.splice(this.cart.indexOf({id: dish.id, name: dish.name, quantity: 1}), 1);
           dish.ordered--;
         }

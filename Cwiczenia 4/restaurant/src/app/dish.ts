@@ -1,20 +1,4 @@
-// export interface Dish {
-//   id: number;
-//   name: string;
-//   cuisine: string;
-//   type: string;
-//   category: string;
-//   ingredients: Array<string>;
-//   maxAmount: number;
-//   ordered: number;
-//   price: number;
-//   description: string;
-//   photos: Array<string>;
-//   rating: number;
-//   reviews: Array<string>
-// }
-
-export class Dish implements Dish{
+export class Dish {
   public constructor(
     public id: number,
     public name: string,
@@ -29,8 +13,7 @@ export class Dish implements Dish{
     public photos: Array<string>,
     public rating: number,
     public ratings: Array<number>
-  ) { }
-
-
+  ) {
+  }
 }
 

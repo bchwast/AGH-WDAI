@@ -1,8 +1,12 @@
 <div class="filter-container">
   <form>
     <div class="filter-section">
-      <span (click)="cartCurrencyService.changeCurrency('eur'); filterService.update()">€</span>
-      <span (click)="cartCurrencyService.changeCurrency('usd'); filterService.update()">$</span>
+      <span class="filter-currency"
+            [ngStyle]="{'border': cartCurrencyService.currentCurrency == 'eur' ? '3px solid limegreen' : null}"
+            (click)="cartCurrencyService.changeCurrency('eur'); filterService.update()">€</span>
+      <span class="filter-currency"
+            [ngStyle]="{'border': cartCurrencyService.currentCurrency == 'usd' ? '3px solid limegreen' : null}"
+            (click)="cartCurrencyService.changeCurrency('usd'); filterService.update()">$</span>
     </div>
     <div class="filter-section">
       <h2>Dish name</h2>
@@ -11,21 +15,27 @@
     <div class="filter-section">
       <h2>Cuisine</h2>
       <button *ngFor="let cuisine of filterService.getAllCuisines()"
-              (click)="filterService.cuisineSwitch(cuisine)" type="button">
+              (click)="filterService.cuisineSwitch(cuisine)"
+              [ngStyle]="{'background-color': filterService.cuisines.includes(cuisine) ? 'darkslateblue' : null}"
+              type="button">
         {{cuisine}}
       </button>
     </div>
     <div class="filter-section">
       <h2>Category</h2>
       <button *ngFor="let category of filterService.getAllCategories()"
-              (click)="filterService.categorySwitch(category)" type="button">
+              (click)="filterService.categorySwitch(category)"
+              [ngStyle]="{'background-color': filterService.categories.includes(category) ? 'darkslateblue' : null}"
+              type="button">
         {{category}}
       </button>
     </div>
     <div class="filter-section">
       <h2>Rating</h2>
       <button *ngFor="let rating of filterService.getAllRatings()"
-              (click)="filterService.ratingSwitch(rating)" type="button">
+              (click)="filterService.ratingSwitch(rating)"
+              [ngStyle]="{'background-color': filterService.ratings.includes(rating) ? 'darkslateblue' : null}"
+              type="button">
         {{rating}}
       </button>
     </div>
@@ -37,17 +47,5 @@
     <button (click)="filterService.reset()">
       Reset filters
     </button>
-    <div class="filter-section">
-      <p>Current filters:</p>
-      <p *ngIf="filterService.cuisines.length > 0">Cuisines:
-        <span *ngFor="let cuisine of filterService.cuisines">{{cuisine}}</span>
-      </p>
-      <p *ngIf="filterService.categories.length > 0">Categories:
-        <span *ngFor="let category of filterService.categories">{{category}}</span>
-      </p>
-      <p *ngIf="filterService.ratings.length > 0">Ratings:
-        <span *ngFor="let rating of filterService.ratings">{{rating}}</span>
-      </p>
-    </div>
   </form>
 </div>

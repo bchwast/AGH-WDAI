@@ -2,11 +2,11 @@
   <div class="dishes-list-element" *ngFor="let dish of dishesListService.dishes | filterDishes:
     filterService.name:
     filterService.cuisines:
-filterService.categories:
-filterService.ratings:
-filterService.minPrice:
-filterService.maxPrice:
-cartCurrencyService.currencies[cartCurrencyService.currentCurrency].value">
+    filterService.categories:
+    filterService.ratings:
+    filterService.minPrice:
+    filterService.maxPrice:
+    cartCurrencyService.currencies[cartCurrencyService.currentCurrency].value">
     <app-dish [dish]="dish" (deleteDishEvent)="deleteDish($event)"></app-dish>
   </div>
 </section>

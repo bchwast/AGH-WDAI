@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Dish } from "../dish";
-import { CartCurrencyService } from "../cart-currency-service/cart-currency.service";
-import { DishesListService } from "../dishes-list-service/dishes-list.service";
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Dish} from "../dish";
+import {CartCurrencyService} from "../cart-currency-service/cart-currency.service";
+import {DishesListService} from "../dishes-list-service/dishes-list.service";
+import {faTrash} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-dish',
@@ -15,7 +15,8 @@ export class DishComponent implements OnInit {
   @Input() dish!: Dish;
   @Output() deleteDishEvent = new EventEmitter<any>();
 
-  constructor(public cartCurrencyService: CartCurrencyService, public dishesListService: DishesListService) { }
+  constructor(public cartCurrencyService: CartCurrencyService, public dishesListService: DishesListService) {
+  }
 
   ngOnInit(): void {
   }

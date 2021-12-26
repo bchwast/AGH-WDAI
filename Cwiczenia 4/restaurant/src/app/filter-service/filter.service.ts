@@ -11,16 +11,16 @@ export class FilterService {
   filterPipe = new FilterPipe();
   dishes: Dish[] = [];
   name: string = '';
-  cuisines: string[] = [];
-  categories: string[] = [];
-  ratings: number[] = [];
+  cuisines: any[] = [];
+  categories: any[] = [];
+  ratings: any[] = [];
   minPrice: number = 0;
   maxPrice: number = 0;
 
-  constructor(public dishesListService: DishesListService, public cartCurrencyService : CartCurrencyService) {
+  constructor(public dishesListService: DishesListService, public cartCurrencyService: CartCurrencyService) {
     this.dishes = this.dishesListService.dishes;
-    this.minPrice = this.getMinPrice();
-    this.maxPrice = this.getMaxPrice();
+    this.minPrice = Math.floor(this.getMinPrice());
+    this.maxPrice = Math.ceil(this.getMaxPrice());
   }
 
   getAllCuisines() {
@@ -44,8 +44,7 @@ export class FilterService {
   cuisineSwitch(cuisine: any) {
     if (this.cuisines.includes(cuisine)) {
       this.cuisines.splice(this.cuisines.indexOf(cuisine), 1);
-    }
-    else {
+    } else {
       this.cuisines.push(cuisine);
     }
     this.cuisines = Object.assign([], this.cuisines);
@@ -55,8 +54,7 @@ export class FilterService {
   categorySwitch(category: any) {
     if (this.categories.includes(category)) {
       this.categories.splice(this.categories.indexOf(category), 1);
-    }
-    else {
+    } else {
       this.categories.push(category);
     }
     this.categories = Object.assign([], this.categories);
@@ -66,8 +64,7 @@ export class FilterService {
   ratingSwitch(rating: any) {
     if (this.ratings.includes(rating)) {
       this.ratings.splice(this.ratings.indexOf(rating), 1);
-    }
-    else {
+    } else {
       this.ratings.push(rating);
     }
     this.ratings = Object.assign([], this.ratings);
@@ -103,8 +100,8 @@ export class FilterService {
   }
 
   update() {
-    this.minPrice = this.getMinPrice();
-    this.maxPrice = this.getMaxPrice();
+    this.minPrice = Math.floor(this.getMinPrice());
+    this.maxPrice = Math.ceil(this.getMaxPrice());
   }
 
   reset() {
@@ -113,8 +110,8 @@ export class FilterService {
     this.cuisines = [];
     this.categories = [];
     this.ratings = [];
-    this.minPrice = this.getMinPrice();
-    this.maxPrice = this.getMaxPrice();
+    this.minPrice = Math.floor(this.getMinPrice());
+    this.maxPrice = Math.ceil(this.getMaxPrice());
   }
 
 }

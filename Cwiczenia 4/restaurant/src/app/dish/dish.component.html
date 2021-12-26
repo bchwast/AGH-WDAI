@@ -16,14 +16,14 @@
     {{dish.category}}
   </p>
   <p class="dish-price" [hidden]="available(dish) <= 0">
-    {{dish.price * cartCurrencyService.currencies[cartCurrencyService.currentCurrency].value}}
+    {{(dish.price * cartCurrencyService.currencies[cartCurrencyService.currentCurrency].value).toFixed(2)}}
     {{cartCurrencyService.currencies[cartCurrencyService.currentCurrency].symbol}}
   </p>
   <p class="dish-unavailable" [hidden]="available(dish) > 0">
-        Dish unavailable
+    Dish unavailable
   </p>
   <button class="dish-add" (click)="cartCurrencyService.addToCart(dish)"
-          [hidden]="!canAddToCart(dish)">
+          [hidden]="!canAddToCart(dish) ">
     +
   </button>
   <button class="dish-remove" (click)="cartCurrencyService.removeFromCart(dish)">
@@ -36,8 +36,10 @@
       ? 'blue' : 'darkorange'}">{{dish.ordered}}</p>
   <p class="dish-rating">
     <span *ngFor="let star of stars">
-      <img class="dish-star" [src]="dish.rating >= star ? '../../assets/images/gold_star.png' : '../../assets/images/black_star.png'"
-      (click)="addRating(star)">
+      <img class="dish-star"
+           [src]="dish.rating >= star ? '../../assets/images/gold_star.png' : '../../assets/images/black_star.png'"
+           alt="star"
+           (click)="addRating(star)">
     </span>
   </p>
 </div>

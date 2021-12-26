@@ -11,19 +11,7 @@ import { Validators } from "@angular/forms";
   styleUrls: ['./add-dish.component.css']
 })
 export class AddDishComponent implements OnInit {
-
   dishes : Dish[] = this.dishService.dishes;
-
-  constructor(
-    public formBuilder: FormBuilder,
-    public dishService: DishesListService,
-    public filterService: FilterService
-  ) {}
-
-  ngOnInit(): void {
-  }
-
-
   dishForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*'), this.duplicateNameValidator.bind(this)]],
     cuisine: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
@@ -31,10 +19,17 @@ export class AddDishComponent implements OnInit {
     category: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
     ingredients: this.formBuilder.array([this.formBuilder.control('')]),
     maxAmount: [0, [Validators.required, Validators.min(0)]],
-    price: [0, [Validators.required, Validators.min(0)]],
+    price: [0, [Validators.required, Validators.min(0), Validators.max(50)]],
     description: ['', [Validators.required]],
     photos: this.formBuilder.array([this.formBuilder.control('')])
   });
+
+  constructor(public formBuilder: FormBuilder, public dishService: DishesListService,
+    public filterService: FilterService
+  ) {}
+
+  ngOnInit(): void {
+  }
 
   duplicateNameValidator(control: FormControl) {
     let name = control.value;

@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Dish } from '../dish';
-import { DISHES } from '../mock-dish-data';
+import {Injectable} from '@angular/core';
+import {Dish} from '../dish';
+import {DISHES} from '../mock-dish-data';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { DISHES } from '../mock-dish-data';
 
 export class DishesListService {
   public dishes: Dish[] = [];
-  public mostExpensive : Dish | undefined;
+  public mostExpensive: Dish | undefined;
   public leastExpensive: Dish | undefined;
 
   constructor() {
@@ -21,7 +21,7 @@ export class DishesListService {
     return this.dishes;
   }
 
-  addDish(dish : Dish) {
+  addDish(dish: Dish) {
     DISHES.push(dish);
     this.mostExpensive = this.getMostExpensive();
     this.leastExpensive = this.getLeastExpensive();
