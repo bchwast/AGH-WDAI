@@ -1,0 +1,5 @@
+<div class="photos-container">
+  <a class="photos-photo" *ngFor="let photo of data.photos" [routerLink]="['/photo', photo.id]" routerLinkActive="active">
+    <img src="{{photo.thumbnailUrl}}" alt="{{photo.title}}">
+  </a>
+</div>
