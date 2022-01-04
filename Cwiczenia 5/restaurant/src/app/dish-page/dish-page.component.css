@@ -13,8 +13,7 @@
     "back"
     "right"
     "left"
-    "bottom-left"
-    "bottom-right";
+    "review";
 }
 
 .dish-page-container > button {
@@ -55,88 +54,8 @@
   height: 100%;
 }
 
-.dish-page-bottom-left {
-  grid-area: bottom-left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: cornflowerblue;
-  color: white;
-  border-radius: 15px;
-  box-shadow: 8px 8px 24px -6px rgba(66, 68, 90, 1);
-  padding: 1%;
-  height: 100%;
-}
-
-.dish-page-bottom-left > label {
-  text-wrap: none;
-  margin: 0.5%;
-  font-size: 120%;
-}
-
-.dish-page-bottom-left > input {
-  outline: 0;
-  border: 0;
-  border-radius: 5px;
-  font-size: 100%;
-  padding: 0.5%;
-}
-
-.dish-page-review-alert {
-  font-size: 120%;
-}
-
-.dish-page-review-add {
-  border: 0;
-  border-radius: 5px;
-  font-size: 120%;
-  color: white;
-  background-color: royalblue;
-  padding: 0.5%;
-  margin: 1%;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.dish-page-review-add:hover {
-  background-color: darkslateblue;
-}
-
-.dish-page-review-add:disabled {
-  background-color: grey;
-  cursor: default;
-}
-
-.dish-page-bottom-right {
-  grid-area: bottom-right;
-  display: flex;
-  flex-direction: column;
-  background-color: cornflowerblue;
-  border-radius: 15px;
-  color: white;
-  padding: 1%;
-  height: 100%;
-  width: 100%;
-}
-
-.dish-page-reviews {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 1%;
-  height: 100%;
-  width: 100%;
-  gap: 1%;
-}
-
-.dish-page-reviews-review {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: royalblue;
-  border-radius: 10px;
-  color: white;
-  padding: 1%;
-  margin-bottom: 2%;
+.dish-page-review {
+  grid-area: review
 }
 
 .dish-page-picture {
@@ -221,11 +140,7 @@
     grid-template-areas:
       "back none none none"
       "left left right right"
-      "bottom-left bottom-left bottom-left bottom-left"
-      "bottom-right bottom-right bottom-right bottom-right";
-  }
-
-  .dish-page-reviews-review {
-    width: 23%;
+      "review review review review"
+      "review review review review";
   }
 }

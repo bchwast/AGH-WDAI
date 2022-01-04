@@ -5,7 +5,6 @@ import {DatabaseService} from "../database-service/database.service";
 import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {ActivatedRoute} from "@angular/router";
-import { FormBuilder, Validators} from "@angular/forms";
 import { FilterService } from "../filter-service/filter.service";
 import {FilterPipe} from "../filter-pipe/filter.pipe";
 
@@ -23,15 +22,10 @@ export class DishPageComponent implements OnInit {
   stars = [1, 2, 3, 4, 5];
   rated = false;
   rating = 0;
-  review = this.fb.group({
-      nick: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      text: ['', [Validators.required, Validators.minLength(50), Validators.maxLength(500)]],
-      date: ['']
-    })
+
 
   constructor(public cartCurrencyService: CartCurrencyService, public dbService: DatabaseService,
-              public route: ActivatedRoute, public fb: FormBuilder, public filterService: FilterService) { }
+              public route: ActivatedRoute, public filterService: FilterService) { }
 
   ngOnInit(): void {
     this.dbService.dishes.subscribe(e => {
@@ -64,12 +58,4 @@ export class DishPageComponent implements OnInit {
       this.rating = star;
     }
   }
-
-  submit() {
-    this.dish.reviews.push({nick: this.review.value.nick, name: this.review.value.name,
-      body: this.review.value.text, date: this.review.value.date});
-    this.review.reset();
-    this.dbService.addReview(this.dish);
-  }
-
 }

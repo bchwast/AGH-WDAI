@@ -20,6 +20,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DishPageComponent } from './dish-page/dish-page.component';
 import { PageComponent } from './page/page.component';
+import { DishReviewComponent } from './dish-review/dish-review.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PageComponent } from './page/page.component';
     MenuComponent,
     PageNotFoundComponent,
     DishPageComponent,
-    PageComponent
+    PageComponent,
+    DishReviewComponent
   ],
     imports: [
         BrowserModule,
