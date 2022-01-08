@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="menu-container" [ngStyle]="{'visibility': visible || width >= 768 ? 'visible' : 'hidden',
-      'transform': visible || width > 768 ? null : 'scaleY(0)', 'height': visible || width > 768 ? '100%' : 0}">
+      'transform': visible || width >= 768 ? null : 'scaleY(0)', 'height': visible || width >= 768 ? '100%' : 0}">
   <div class="menu-subcontainer-left" >
     <a class="menu-element" routerLink="./home" routerLinkActive="active">Home</a>
     <a class="menu-element" routerLink="./dishes" routerLinkActive="active">Menu</a>
