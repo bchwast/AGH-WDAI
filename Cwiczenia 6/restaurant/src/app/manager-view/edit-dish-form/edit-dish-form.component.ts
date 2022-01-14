@@ -57,8 +57,6 @@ export class EditDishFormComponent implements OnInit {
   }
 
   updateDish(edit: any) {
-    console.log(edit.ingredients);
-    console.log(edit.photos);
     this.dish.name = edit.name != null && edit.name != '' ? edit.name : this.dish.name;
     this.dish.cuisine = edit.cuisine != null && edit.cuisine != '' ? edit.cuisine: this.dish.cuisine;
     this.dish.type = edit.type != null && edit.type != '' ? edit.type : this.dish.type
